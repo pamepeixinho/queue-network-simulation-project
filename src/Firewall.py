@@ -10,5 +10,14 @@
     tipo 2, o processamento dura algo entre 3 mseg e 5 mseg já no processamento de uma
     interação tipo 3, este dura algo entre 7 mseg e 10 mseg."
 """
+import random
 
-# TODO: implement
+from src.InteractionType import InteractionType
+
+
+def get_processing_time(interaction_type):
+    if interaction_type == InteractionType.INTERACTION_TWO:
+        min_value, max_value = 3, 5
+    else:
+        min_value, max_value = 7, 10
+    return random.uniform(min_value, max_value)

@@ -6,4 +6,6 @@
     Problem Desc: "Admita um delay de aproximadamente 0,00015 seg/pacote roteado;"
 """
 
-# TODO: implement
+
+def get_processing_time():
+    return 0.00015
