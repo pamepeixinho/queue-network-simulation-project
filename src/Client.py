@@ -1,8 +1,12 @@
 from numpy import random
 
+from src.ApplicationServer import ApplicationServer
+from src.DatabaseServer import DatabaseServer
+from src.Firewall import Firewall
 from src.InteractionType import InteractionType
 import src.constants as const
 import src.Messages as Msg
+from src.WebServer import WebServer
 
 
 class Client(object):
@@ -18,15 +22,15 @@ class Client(object):
         self.wsIn = 0
         self.wsInDuration = 0
 
-        self.saIn = 0
-        self.saInDuration = 0
+        self.asIn = 0
+        self.asInDuration = 0
 
         self.bdIn = 0
         self.bdDuration = 0
         self.bdOut = 0
 
-        self.saOut = 0
-        self.saOutDuration = 0
+        self.asOut = 0
+        self.asOutDuration = 0
 
         self.wsOut = 0
         self.wsOutDuration = 0
@@ -60,5 +64,7 @@ class Client(object):
             self.interaction = InteractionType.INTERACTION_THREE
 
     def get_processing_durations(self):
-        return 1
-
+        self.wsInDuration, self.wsOutDuration = WebServer.get_processing_time(self.interaction)
+        self.asInDuration, self.asOutDuration = ApplicationServer.get_processing_time()
+        self.firewallDelay = Firewall.get_processing_time(self.interaction)
+        self.bdDuration = DatabaseServer.get_processing_time()
