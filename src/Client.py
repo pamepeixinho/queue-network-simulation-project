@@ -1,12 +1,12 @@
 from numpy import random
 
-from src.ApplicationServer import ApplicationServer
-from src.DatabaseServer import DatabaseServer
-from src.Firewall import Firewall
-from src.InteractionType import InteractionType
-import src.constants as const
-import src.Messages as Msg
-from src.WebServer import WebServer
+from ApplicationServer import ApplicationServer
+from DatabaseServer import DatabaseServer
+from Firewall import Firewall
+from InteractionType import InteractionType
+import constants as const
+import Messages as Msg
+from WebServer import WebServer
 
 
 class Client(object):
@@ -17,7 +17,6 @@ class Client(object):
 
         self.interaction = InteractionType.INTERACTION_ONE
         self.arrivedAt = 0
-        self.requestDuration = 0
 
         self.wsIn = 0
         self.wsInDuration = 0
@@ -38,10 +37,14 @@ class Client(object):
         self.receivingDuration = 0
         self.firewallDelay = 0
 
+        self.requestDuration = 0.005
         self.get_msgs()
         self.decide_interaction()
         self.get_processing_durations()
 
+        print(self.__dict__)
+
+    # noinspection PyAttributeOutsideInit
     def get_msgs(self):
         self.m1 = Msg.get_m1()
         self.m2 = Msg.get_m2()

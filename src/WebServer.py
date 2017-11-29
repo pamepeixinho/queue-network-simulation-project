@@ -11,9 +11,9 @@
     nos nós 2 e 9 ficam entre 9 mseg. e 12 mseg."
 """
 
-from src.UniformDistribution import uniform_distribution
-from src.InteractionType import InteractionType
-
+from UniformDistribution import uniform_distribution
+from InteractionType import InteractionType
+from SimulationTable import TableColumns
 
 class WebServer:
 
@@ -30,3 +30,17 @@ class WebServer:
             return uniform_distribution(5, 7), uniform_distribution(7, 10)
         else:
             return uniform_distribution(9, 12), uniform_distribution(9, 12)
+
+    @staticmethod
+    def simulate_server_in(table, clients, velocity):
+        for idx, client in enumerate(clients):
+            client_arrival_instant = table[idx][TableColumns.ARRIVAL_INSTANT]
+            duration = client.wsInDuration
+
+            if idx == 0:
+                table[idx][TableColumns.START_WS_IN] = (client.m1 / velocity) + client_arrival_instant
+                table[idx][TableColumns.DURATION_WS_IN] = duration
+                table[idx][TableColumns.END_WS_IN] = table[idx][TableColumns.START_WS_IN] + duration
+            else:
+                # Max(arrival_instant, end_ws)
+                return 1

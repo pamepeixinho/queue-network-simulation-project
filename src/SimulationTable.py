@@ -5,7 +5,7 @@ from enum import Enum, unique
 class TableColumns(Enum):
     """Enum used to describe type of column in table of simulation"""
     CLIENT_ID = 0
-    TEC = 1
+    ARRIVAL_INSTANT = 1
 
     START_WS_IN = 2
     DURATION_WS_IN = 3
@@ -65,12 +65,12 @@ class SimulationTable:
         self.clients_number = clients_number
         self.table = [[0.0 for x in range(len(column_header_name()))] for y in range(clients_number)]
 
-    def populate_initial_simulation_data(self, tec):
+    def populate_initial_simulation_data(self, arrival_instant):
         for idx, client in enumerate(self.table):
             client[0] = idx
-            client[1] = self.table[idx - 1][1] + tec if idx > 0 else tec
+            client[1] = self.table[idx - 1][1] + arrival_instant if idx > 0 else arrival_instant
 
 
 # table = SimulationTable(clients_number=4)
-# table.populate_initial_simulation_data(tec=0.01)
+# table.populate_initial_simulation_data(arrival_instant=0.01)
 # print(table.table)

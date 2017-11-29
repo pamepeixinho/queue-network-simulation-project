@@ -10,7 +10,7 @@
     respectivamente."
 """
 
-from src.UniformDistribution import uniform_distribution
+from UniformDistribution import uniform_distribution
 
 
 class ApplicationServer:

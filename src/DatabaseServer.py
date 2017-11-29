@@ -7,7 +7,7 @@
      se divide em duas parcelas, ambas uniformemente distribuídas. Entre 15 mseg e 30 mseg
      de processamento e entre 50 mseg e 400 mseg de acesso a disco."
 """
-from src.UniformDistribution import uniform_distribution
+from UniformDistribution import uniform_distribution
 
 
 class DatabaseServer:

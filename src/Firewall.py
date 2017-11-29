@@ -10,9 +10,9 @@
     tipo 2, o processamento dura algo entre 3 mseg e 5 mseg já no processamento de uma
     interação tipo 3, este dura algo entre 7 mseg e 10 mseg."
 """
-from numpy import random
+from UniformDistribution import uniform_distribution
 
-from src.InteractionType import InteractionType
+from InteractionType import InteractionType
 
 
 class Firewall:
@@ -23,4 +23,4 @@ class Firewall:
             min_value, max_value = 3, 5
         else:
             min_value, max_value = 7, 10
-        return random.uniform(min_value, max_value)
+        return uniform_distribution(min_value, max_value)

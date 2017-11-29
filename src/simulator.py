@@ -1,11 +1,20 @@
-# Simulate 250 clients in the system
-
-from src.SimulationTable import SimulationTable
-from src.constants import velocity, tec
+from Client import Client
+from SimulationTable import SimulationTable
+from constants import velocity, arrival_instant
 
 
 def simulation(clients_number):
-    #  TODO: create msgs
+    """
+        Simulation of queue network
+    """
+    clients = [Client() for x in range(clients_number)]
 
     table = SimulationTable(clients_number=clients_number)
-    table.populate_initial_simulation_data(tec=tec)
+    table.populate_initial_simulation_data(arrival_instant=arrival_instant)
+
+    print(clients)
+    print(table)
+
+
+
+simulation(clients_number=30)
