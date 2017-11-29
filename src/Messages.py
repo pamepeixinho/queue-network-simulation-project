@@ -1,4 +1,4 @@
-from src.Model.Message import Message
+from src.Message import Message
 
 
 def get_m1():
