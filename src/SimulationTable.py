@@ -7,27 +7,27 @@ class TableColumns(Enum):
     CLIENT_ID = 0
     TEC = 1
 
-    START_SW_GO = 2
-    DURATION_SW_GO = 3
-    END_SW_GO = 4
+    START_WS_IN = 2
+    DURATION_WS_IN = 3
+    END_WS_IN = 4
 
-    START_SA_GO = 5
-    DURATION_SA_GO = 6
-    END_SA_GO = 7
+    START_AS_IN = 5
+    DURATION_AS_IN = 6
+    END_AS_IN = 7
 
     START_DB = 8
     DURATION_DB = 9
     END_DB = 10
 
-    START_SA_RETURN = 11
-    DURATION_SA_RETURN = 12
-    END_SA_RETURN = 13
+    START_AS_OUT = 11
+    DURATION_AS_OUT = 12
+    END_AS_OUT = 13
 
-    START_SW_RETURN = 14
-    DURATION_SW_RETURN = 15
-    END_SW_RETURN = 16
+    START_WS_OUT = 14
+    DURATION_WS_OUT = 15
+    END_WS_OUT = 16
 
-    ANSWER = 17
+    ANWSER = 17
     INTERACTION = 18
 
 
