@@ -28,4 +28,5 @@ class WebServer:
             return uniform_distribution(4, 6), 0
         elif interaction_type == InteractionType.INTERACTION_TWO:
             return uniform_distribution(5, 7), uniform_distribution(7, 10)
-        return 0
+        else:
+            return uniform_distribution(9, 12), uniform_distribution(9, 12)

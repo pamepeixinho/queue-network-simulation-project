@@ -7,5 +7,14 @@
      se divide em duas parcelas, ambas uniformemente distribuídas. Entre 15 mseg e 30 mseg
      de processamento e entre 50 mseg e 400 mseg de acesso a disco."
 """
+from src.UniformDistribution import uniform_distribution
 
-# TODO: implement
+
+class DatabaseServer:
+    @staticmethod
+    def get_processing_time():
+        """
+            Get Processing time (Duration)
+        :return: tuple (duration_ws_in and duration_ws_out)
+        """
+        return uniform_distribution(15, 30) + uniform_distribution(50, 400)
