@@ -1,4 +1,4 @@
-from src.Message import Message
+from Message import Message
 
 
 def get_m1():

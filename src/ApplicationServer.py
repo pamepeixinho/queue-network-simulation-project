@@ -10,4 +10,15 @@
     respectivamente."
 """
 
-# TODO: implement
+from UniformDistribution import uniform_distribution
+
+
+class ApplicationServer:
+
+    @staticmethod
+    def get_processing_time():
+        """
+            Get Processing time (Duration)
+        :return: tuple (duration_ws_in and duration_ws_out)
+        """
+        return uniform_distribution(40, 60), uniform_distribution(60, 120)
