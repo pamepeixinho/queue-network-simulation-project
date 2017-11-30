@@ -42,7 +42,7 @@ class Client(object):
         self.decide_interaction()
         self.get_processing_durations()
 
-        print(self.__dict__)
+        # print(self.__dict__)
 
     # noinspection PyAttributeOutsideInit
     def get_msgs(self):
