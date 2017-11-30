@@ -1,8 +1,8 @@
-from enum import Enum, unique
+from enum import IntEnum, unique
 
 
 @unique
-class TableColumns(Enum):
+class TableColumns(IntEnum):
     """Enum used to describe type of column in table of simulation"""
     CLIENT_ID = 0
     ARRIVAL_INSTANT = 1
@@ -27,7 +27,7 @@ class TableColumns(Enum):
     DURATION_WS_OUT = 15
     END_WS_OUT = 16
 
-    ANWSER = 17
+    ANSWER = 17
     INTERACTION = 18
 
 

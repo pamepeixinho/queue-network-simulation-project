@@ -1,8 +1,8 @@
-from enum import Enum, unique
+from enum import IntEnum, unique
 
 
 @unique
-class InteractionType(Enum):
+class InteractionType(IntEnum):
     """Enum used to describe type of interaction"""
     INTERACTION_ONE = 1
     INTERACTION_TWO = 2
